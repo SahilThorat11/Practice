@@ -73,6 +73,8 @@ void DeleteFirst(PPNODE first, PPNODE last)
     }
     else
     {
+        temp = *first;
+
         *first = (*first) -> next;
         free(temp);
 
@@ -131,6 +133,12 @@ int main()
     InsertLast(&head, &tail, 101);
     InsertLast(&head, &tail, 111);
     InsertLast(&head, &tail, 121);
+
+    Display(head, tail);
+    iRet = Count(head, tail);
+    printf("Number of nodes are : %d\n", iRet);
+
+    DeleteFirst(&head, &tail);
 
     Display(head, tail);
     iRet = Count(head, tail);
