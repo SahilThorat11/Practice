@@ -143,7 +143,7 @@ void DeleteAtPos(PPNODE first, PPNODE last, int iPos)
 
 int main()
 {
-    PNODE head = NULL;
+     PNODE head = NULL;
     PNODE tail = NULL;
     int iRet = 0;
 
@@ -158,6 +158,18 @@ int main()
     InsertLast(&head, &tail, 101);
     InsertLast(&head, &tail, 111);
     InsertLast(&head, &tail, 121);
+
+    Display(head, tail);
+    iRet = Count(head, tail);
+    printf("Number of nodes are : %d\n", iRet);
+
+    DeleteFirst(&head, &tail);
+
+    Display(head, tail);
+    iRet = Count(head, tail);
+    printf("Number of nodes are : %d\n", iRet);
+
+    DeleteLast(&head, &tail);
 
     Display(head, tail);
     iRet = Count(head, tail);
