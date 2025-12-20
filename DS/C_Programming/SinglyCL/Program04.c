@@ -75,7 +75,7 @@ void Display(PNODE first, PNODE last)
     printf("\n\n");
 }
 
-void Count(PNODE first, PNODE last)
+int Count(PNODE first, PNODE last)
 {}
 
 void InsertAtPos(PPNODE first, PPNODE last, int no, int iPos)
