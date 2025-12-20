@@ -81,34 +81,7 @@ void DeleteFirst(PPNODE first, PPNODE last)
 }
 
 void DeleteLast(PPNODE first, PPNODE last)
-{
-    PNODE temp = NULL;
-
-    if((*first == NULL) && (*last == NULL))
-    {
-        return;
-    }
-    else if (*first == *last)
-    {
-        free(*first);
-        *first = NULL;
-        *last = NULL;
-    }
-    else
-    {
-        temp = *first;
-
-        while(temp -> next != *last)
-        {
-            temp = temp -> next;
-        }
-
-        free(*last);
-        *last = temp;
-
-        (*last) -> next = *first;
-    } 
-}
+{}
 
 void Display(PNODE first, PNODE last)
 {
