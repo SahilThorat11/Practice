@@ -166,6 +166,8 @@ void InsertAtPos(PPNODE first, PPNODE last, int no, int iPos)
         newn -> data = no;
         newn -> next = NULL;
 
+        temp = *first;
+
         for(iCnt = 1; iCnt < iPos - 1; iCnt++)
         {
             temp = temp -> next;
