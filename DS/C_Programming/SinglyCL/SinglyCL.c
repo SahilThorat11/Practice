@@ -58,7 +58,7 @@ void InsertLast(PPNODE first, PPNODE last, int no)
     (*last) -> next = *first; 
 }
 
-void DeleteFirst(PPNODE first, PPNODE last)
+void DeleteFirst(PPNODE first, PPNODE last)   // With Using Temporary pointer
 {
     PNODE temp = NULL;
 
@@ -101,11 +101,16 @@ void DeleteLast(PPNODE first, PPNODE last)
     {
         temp = *first;
 
-        *first = (*first) -> next;
-        free(temp);
+        while(temp -> next -> next != (*last) -> next)
+        {
+            temp = temp -> next;
+        } 
+
+        free(temp -> next);
+        *last = temp;
 
         (*last) -> next = *first;
-    } 
+    }
 }
 
 void Display(PNODE first, PNODE last)
