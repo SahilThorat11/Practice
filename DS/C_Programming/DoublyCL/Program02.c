@@ -14,7 +14,7 @@ typedef struct node ** PPNODE;
 
 void InsesrtFirst(PPNODE first, PPNODE last, int iNo)
 {
-    PNODE newn = NULL
+    PNODE newn = NULL;
 
     newn = (PNODE)malloc(sizeof(NODE));
 
