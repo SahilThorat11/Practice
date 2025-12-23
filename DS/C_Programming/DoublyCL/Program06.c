@@ -65,7 +65,26 @@ void InsertLast(PPNODE first, PPNODE last, int iNo)
 }
 
 void DeleteFirst(PPNODE first, PPNODE last)
-{}
+{
+    if((*first == NULL) && (*last == NULL))   // LL is empty
+    {
+        return;
+    }
+    else if(*first == *last)                  // LL contains one node
+    {
+        free(*first);
+        *first = NULL;
+        *last = NULL;
+    }
+    else                                      // LL contains one or more nodes
+    {
+        *first = (*first) -> next;
+        free((*first) -> prev);
+
+        (*last) -> next = *first;
+        (*first) -> prev = *last;
+    }
+}
 
 void DeleteLast(PPNODE first, PPNODE last)
 {}
@@ -131,6 +150,12 @@ int main()
     InsertLast(&head, &tail, 101);
     InsertLast(&head, &tail, 111);
     InsertLast(&head, &tail, 121);
+
+    Display(head, tail);
+    iRet = Count(head, tail);
+    printf("Number of nodes are : %d\n", iRet);
+
+    DeleteFirst(&head, &tail);
 
     Display(head, tail);
     iRet = Count(head, tail);
