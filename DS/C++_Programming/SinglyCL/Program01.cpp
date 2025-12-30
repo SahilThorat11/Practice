@@ -30,7 +30,6 @@ class SinglyCL
             PNODE newn = NULL;
 
             newn = new NODE;
-
             newn -> data = no;
             newn -> next = NULL;
 
