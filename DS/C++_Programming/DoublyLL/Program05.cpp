@@ -119,9 +119,9 @@ class DoublyLL
                 temp -> next -> prev = newn;
                 temp -> next = newn;
                 newn -> prev = temp;
-            }
 
-            iCount++;
+                iCount++;
+            }
         }
 
         void DeleteFirst()
