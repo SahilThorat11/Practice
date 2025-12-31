@@ -141,7 +141,6 @@ class DoublyLL
                 delete first -> prev;
                 first -> prev = NULL;
             }
-
             iCount--;
         }
 
