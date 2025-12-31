@@ -119,13 +119,31 @@ class DoublyLL
                 temp -> next -> prev = newn;
                 temp -> next = newn;
                 newn -> prev = temp;
-
-                iCount++;
             }
+
+            iCount++;
         }
 
         void DeleteFirst()
-        {}
+        {
+            if(first == NULL)
+            {
+                return;
+            }
+            else if(first -> next == NULL)
+            {
+                delete first;
+                first = NULL;
+            }
+            else
+            {
+                first = first -> next;
+                delete first -> prev;
+                first -> prev = NULL;
+            }
+
+            iCount--;
+        }
 
         void DeleteLast()
         {}
@@ -178,6 +196,12 @@ int main()
     cout<<"Number of nodes are : "<<iRet<<"\n";
 
     obj.InsertAtPos(105, 5);
+
+    obj.Display();
+    iRet = obj.Count();
+    cout<<"Number of nodes are : "<<iRet<<"\n";
+
+    obj.DeleteFirst();
 
     obj.Display();
     iRet = obj.Count();
