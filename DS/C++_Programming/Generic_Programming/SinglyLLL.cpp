@@ -10,7 +10,7 @@ struct node
 class SinglyLLL
 {
     public:
-        struct node * head;
+        struct node * first;
         int iCount;
 
         SinglyLLL();
@@ -26,7 +26,7 @@ class SinglyLLL
 
 SinglyLLL::SinglyLLL()
 {
-    head = NULL;
+    first = NULL;
     iCount = 0;
 }
 
@@ -38,14 +38,14 @@ void SinglyLLL::InsertFirst(int no)
     newn->data = no;
     newn->next = NULL;
 
-    if(head == NULL)
+    if(first == NULL)
     {
-        head = newn;
+        first = newn;
     }
     else
     {
-        newn->next = head;
-        head = newn;
+        newn->next = first;
+        first = newn;
     }
     iCount++;
 }
@@ -59,13 +59,13 @@ void SinglyLLL::InsertLast(int no)
     newn->data = no;
     newn->next = NULL;
 
-    if(head == NULL)
+    if(first == NULL)
     {
-        head = newn;
+        first = newn;
     }
     else
     {
-        temp = head;
+        temp = first;
 
         while(temp -> next != NULL)
         {
@@ -103,7 +103,7 @@ void SinglyLLL::InsertAtPos(int no , int ipos)
         newn->data = no;
         newn->next = NULL;
 
-        temp = head;
+        temp = first;
 
         for(iCnt =1; iCnt< ipos -1; iCnt++)
         {
@@ -121,20 +121,20 @@ void SinglyLLL::DeleteFirst()
 {
     struct node * temp = NULL;
 
-    if(head == NULL)
+    if(first == NULL)
     {
         return;
     }
-    else if(head->next == NULL)
+    else if(first->next == NULL)
     {
-        delete head;
-        head = NULL;
+        delete first;
+        first = NULL;
     }
     else
     {
-        temp = head;
+        temp = first;
 
-        head = head -> next;
+        first = first -> next;
         delete temp;
     }
     iCount--;
@@ -144,18 +144,18 @@ void SinglyLLL::DeleteLast()
 {
     struct node * temp = NULL;
 
-    if(head == NULL)
+    if(first == NULL)
     {
         return;
     }
-    else if(head->next == NULL)
+    else if(first->next == NULL)
     {
-        delete head;
-        head = NULL;
+        delete first;
+        first = NULL;
     }
     else
     {
-        temp = head;
+        temp = first;
 
         while(temp->next->next != NULL)
         {
@@ -190,7 +190,7 @@ void SinglyLLL::DeleteAtPos(int ipos)
     }
     else
     {
-        temp = head;
+        temp = first;
 
         for(iCnt = 1; iCnt < ipos -1; iCnt++)
         {
@@ -208,7 +208,7 @@ void SinglyLLL::DeleteAtPos(int ipos)
 
 void SinglyLLL::Display()
 {
-    struct node * temp = head;
+    struct node * temp = first;
 
     cout<<"\n";
 
