@@ -79,7 +79,7 @@ void SinglyLLL::InsertLast(int no)
 
 void SinglyLLL::InsertAtPos(int no , int ipos)
 {
-    int i = 0;
+    int iCnt = 0;
     struct node * newn = NULL;
     struct node * temp = NULL;
 
@@ -105,7 +105,7 @@ void SinglyLLL::InsertAtPos(int no , int ipos)
 
         temp = head;
 
-        for(i =1; i< ipos -1; i++)
+        for(iCnt =1; iCnt< ipos -1; iCnt++)
         {
             temp = temp->next;
         }
@@ -170,7 +170,7 @@ void SinglyLLL::DeleteLast()
 
 void SinglyLLL::DeleteAtPos(int ipos)
 {
-    int i = 0;
+    int iCnt = 0;
     struct node * temp = NULL;
     struct node * target = NULL;
 
@@ -192,7 +192,7 @@ void SinglyLLL::DeleteAtPos(int ipos)
     {
         temp = head;
 
-        for(i =1; i< ipos -1; i++)
+        for(iCnt = 1; iCnt < ipos -1; iCnt++)
         {
             temp = temp->next;
         }
