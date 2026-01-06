@@ -1,23 +1,26 @@
 #include<iostream>
 using namespace std;
 
-struct node
+template<class T>
+struct DoublyLLLnode
 {
-    int data;
-    struct node *next;
-    struct node *prev;
+    T data;
+    struct DoublyLLLnode<T> *next;
+    struct DoublyLLLnode<T> *prev;
 };
 
+template<class T>
 class DoublyLLL
 {
-    public:
-        struct node * first;
+    private:
+        struct DoublyLLLnode<T> * first;
         int iCount;
 
+    public:
         DoublyLLL();
-        void InsertFirst(int no);
-        void InsertLast(int no);
-        void InsertAtPos(int no , int ipos);
+        void InsertFirst(T no);
+        void InsertLast(T no);
+        void InsertAtPos(T no , int ipos);
         void DeleteFirst();
         void DeleteLast();
         void DeleteAtPos(int ipos);
@@ -25,17 +28,19 @@ class DoublyLLL
         int Count();
 };
 
-DoublyLLL::DoublyLLL()
+template<class T>
+DoublyLLL<T> :: DoublyLLL()
 {
     first = NULL;
     iCount = 0;
 }
 
-void DoublyLLL::InsertFirst(int no)
+template<class T>
+void DoublyLLL<T> :: InsertFirst(T no)
 {
-    struct node * newn = NULL;
+    struct DoublyLLLnode<T> * newn = NULL;
 
-    newn = new node;
+    newn = new struct DoublyLLLnode<T>;
     newn->data = no;
     newn->next = NULL;
     newn->prev = NULL;
@@ -53,12 +58,13 @@ void DoublyLLL::InsertFirst(int no)
     iCount++;
 }
 
-void DoublyLLL::InsertLast(int no)
+template<class T>
+void DoublyLLL<T> :: InsertLast(T no)
 {
-    struct node * newn = NULL;
-    struct node * temp = NULL;
+    struct DoublyLLLnode<T> * newn = NULL;
+    struct DoublyLLLnode<T> * temp = NULL;
 
-    newn = new node;
+    newn = new struct DoublyLLLnode<T>;
     newn->data = no;
     newn->next = NULL;
     newn->prev = NULL;
@@ -82,11 +88,12 @@ void DoublyLLL::InsertLast(int no)
     iCount++;
 }
 
-void DoublyLLL::InsertAtPos(int no , int ipos)
+template<class T>
+void DoublyLLL<T> :: InsertAtPos(T no , int ipos)
 {
     int iCnt = 0;
-    struct node * newn = NULL;
-    struct node * temp = NULL;
+    struct DoublyLLLnode<T> * newn = NULL;
+    struct DoublyLLLnode<T> * temp = NULL;
 
     if((ipos < 1) || (ipos > iCount + 1))
     {
@@ -104,7 +111,7 @@ void DoublyLLL::InsertAtPos(int no , int ipos)
     }
     else
     {
-        newn = new node;
+        newn = new struct DoublyLLLnode<T>;
         newn->data = no;
         newn->next = NULL;
         newn->prev = NULL;
@@ -125,7 +132,8 @@ void DoublyLLL::InsertAtPos(int no , int ipos)
     }
 }
 
-void DoublyLLL::DeleteFirst()
+template<class T>
+void DoublyLLL<T> :: DeleteFirst()
 {
     if(first == NULL)
     {
@@ -145,9 +153,10 @@ void DoublyLLL::DeleteFirst()
     iCount--;
 }
 
-void DoublyLLL::DeleteLast()
+template<class T>
+void DoublyLLL<T> :: DeleteLast()
 {
-    struct node * temp = NULL;
+    struct DoublyLLLnode<T> * temp = NULL;
 
     if(first == NULL)
     {
@@ -173,10 +182,11 @@ void DoublyLLL::DeleteLast()
     iCount--;
 }
 
-void DoublyLLL::DeleteAtPos(int ipos)
+template<class T>
+void DoublyLLL<T> :: DeleteAtPos(int ipos)
 {
     int iCnt = 0;
-    struct node * temp = NULL;
+    struct DoublyLLLnode<T> * temp = NULL;
 
     if((ipos < 1) || (ipos > iCount))
     {
@@ -209,9 +219,10 @@ void DoublyLLL::DeleteAtPos(int ipos)
     }
 }
 
-void DoublyLLL::Display()
+template<class T>
+void DoublyLLL<T> :: Display()
 {
-    struct node * temp = first;
+    struct DoublyLLLnode<T> * temp = first;
 
     cout<<"\n";
 
@@ -224,14 +235,15 @@ void DoublyLLL::Display()
     cout<<"NULL\n";
 }
 
-int DoublyLLL::Count()
+template<class T>
+int DoublyLLL<T> :: Count()
 {
     return iCount;
 }
 
 int main()
 {
-    DoublyLLL dobj;
+    DoublyLLL<int> dobj;
     int iRet = 0;
 
     dobj.InsertFirst(51);
