@@ -1436,95 +1436,192 @@ void DoublyCLL<T>::DeleteAtPos(int pos)
 
 int main()
 {
-    SinglyLLL<int> * obj = new SinglyLLL<int>();
+    cout<<"---------------------------------------------Singly Linear Linked List---------------------------------------------\n";
+
+    SinglyLLL<int> * sobj1 = new SinglyLLL<int>();
     int iRet = 0;
 
-    obj->InsertFirst(51);
-    obj->InsertFirst(21);
-    obj->InsertFirst(11);
+    sobj1->InsertFirst(51);
+    sobj1->InsertFirst(21);
+    sobj1->InsertFirst(11);
 
-    obj->Display();
-    iRet = obj->Count();
+    sobj1->Display();
+    iRet = sobj1->Count();
     cout<<"Number of nodes are : "<<iRet<<"\n";
 
-    obj->InsertLast(101);
-    obj->InsertLast(111);
-    obj->InsertLast(121);
+    sobj1->InsertLast(101);
+    sobj1->InsertLast(111);
+    sobj1->InsertLast(121);
 
-    obj->Display();
-    iRet = obj->Count();
+    sobj1->Display();
+    iRet = sobj1->Count();
     cout<<"Number of nodes are : "<<iRet<<"\n";
 
-    obj->InsertAtPos(75, 4);
+    sobj1->InsertAtPos(75, 4);
 
-    obj->Display();
-    iRet = obj->Count();
+    sobj1->Display();
+    iRet = sobj1->Count();
     cout<<"Number of nodes are : "<<iRet<<"\n";
 
-    obj->DeleteAtPos(4);
+    sobj1->DeleteAtPos(4);
 
-    obj->Display();
-    iRet = obj->Count();
+    sobj1->Display();
+    iRet = sobj1->Count();
     cout<<"Number of nodes are : "<<iRet<<"\n";
 
 
-    obj->DeleteFirst();
+    sobj1->DeleteFirst();
 
-    obj->Display();
-    iRet = obj->Count();
+    sobj1->Display();
+    iRet = sobj1->Count();
     cout<<"Number of nodes are : "<<iRet<<"\n";
 
-    obj->DeleteLast();
+    sobj1->DeleteLast();
 
-    obj->Display();
-    iRet = obj->Count();
+    sobj1->Display();
+    iRet = sobj1->Count();
     cout<<"Number of nodes are : "<<iRet<<"\n";
 
-    delete obj;
+    delete sobj1;
 
-    DoublyLLL<char> *dobj = new DoublyLLL<char>();
+    cout<<"---------------------------------------------Doubly Linear Linked List---------------------------------------------\n";
 
-    dobj->InsertFirst('A');
-    dobj->InsertFirst('B');
-    dobj->InsertFirst('C');
+    DoublyLLL<char> *dobj1 = new DoublyLLL<char>();
 
-    dobj->Display();
+    dobj1->InsertFirst('A');
+    dobj1->InsertFirst('B');
+    dobj1->InsertFirst('C');
 
-    cout<<"Number of elements of linked list are : "<<dobj->Count()<<"\n";
+    dobj1->Display();
 
-    dobj->InsertLast('X');
-    dobj->InsertLast('Y');
-    dobj->InsertLast('Z');
+    cout<<"Number of elements of linked list are : "<<dobj1->Count()<<"\n";
 
-    dobj->Display();
+    dobj1->InsertLast('X');
+    dobj1->InsertLast('Y');
+    dobj1->InsertLast('Z');
 
-    cout<<"Number of elements of linked list are : "<<dobj->Count()<<"\n";
+    dobj1->Display();
 
-    dobj->InsertAtPos('$', 4);
+    cout<<"Number of elements of linked list are : "<<dobj1->Count()<<"\n";
 
-    dobj->Display();
+    dobj1->InsertAtPos('$', 4);
 
-    cout<<"Number of elements of linked list are : "<<dobj->Count()<<"\n";
+    dobj1->Display();
 
-    dobj->DeleteAtPos(4);
+    cout<<"Number of elements of linked list are : "<<dobj1->Count()<<"\n";
 
-    dobj->Display();
+    dobj1->DeleteAtPos(4);
 
-    cout<<"Number of elements of linked list are : "<<dobj->Count()<<"\n";
+    dobj1->Display();
 
-    dobj->DeleteFirst();
+    cout<<"Number of elements of linked list are : "<<dobj1->Count()<<"\n";
 
-    dobj->Display();
+    dobj1->DeleteFirst();
 
-    cout<<"Number of elements of linked list are : "<<dobj->Count()<<"\n";
+    dobj1->Display();
 
-    dobj->DeleteLast();
+    cout<<"Number of elements of linked list are : "<<dobj1->Count()<<"\n";
 
-    dobj->Display();
+    dobj1->DeleteLast();
 
-    cout<<"Number of elements of linked list are : "<<dobj->Count()<<"\n";
+    dobj1->Display();
 
-    delete dobj;
+    cout<<"Number of elements of linked list are : "<<dobj1->Count()<<"\n";
+
+    delete dobj1;
+
+    cout<<"---------------------------------------------Singly Circular Linked List---------------------------------------------\n";
+
+    SinglyCLL<int>* sobj2 = new SinglyCLL<int>();
+
+
+    sobj2->InsertFirst(51);
+    sobj2->InsertFirst(21);
+    sobj2->InsertFirst(11);
+
+    sobj2->Display();
+    iRet = sobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    sobj2->InsertLast(101);
+    sobj2->InsertLast(111);
+    sobj2->InsertLast(121);
+
+    sobj2->Display();
+    iRet = sobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    sobj2->InsertAtPos(75, 4);
+
+    sobj2->Display();
+    iRet = sobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    sobj2->DeleteAtPos(4);
+
+    sobj2->Display();
+    iRet = sobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    sobj2->DeleteFirst();
+
+    sobj2->Display();
+    iRet = sobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    sobj2->DeleteLast();
+
+    sobj2->Display();
+    iRet = sobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    delete sobj2;
+
+    cout<<"---------------------------------------------Doubly Circular Linked List---------------------------------------------\n";
+
+    DoublyCLL<int>* dobj2 = new DoublyCLL<int>();
+
+    dobj2->InsertFirst(51);
+    dobj2->InsertFirst(21);
+    dobj2->InsertFirst(11);
+
+    dobj2->Display();
+    iRet = dobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    dobj2->InsertLast(101);
+    dobj2->InsertLast(111);
+    dobj2->InsertLast(121);
+
+    dobj2->Display();
+    iRet = dobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    dobj2->InsertAtPos(75, 4);
+
+    dobj2->Display();
+    iRet = dobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    dobj2->DeleteAtPos(4);
+
+    dobj2->Display();
+    iRet = dobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    dobj2->DeleteFirst();
+
+    dobj2->Display();
+    iRet = dobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    dobj2->DeleteLast();
+
+    dobj2->Display();
+    iRet = dobj2->Count();
+    cout << "Number of nodes are : " << iRet << "\n";
+
+    delete dobj2;
 
     return 0;
 }
