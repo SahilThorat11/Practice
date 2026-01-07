@@ -17,7 +17,7 @@ Doubly Circular             DoublyCLLnode                          DoublyCLL    
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////
-//              Singly Linear Linked List using Generic Approch
+// Final code of Singly Linear Linked List using Generic Approach
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma pack(1)
@@ -359,7 +359,7 @@ void SinglyLLL<T> :: DeleteAtPos(int Pos)
 
 
 ////////////////////////////////////////////////////////////////////////////
-//              Doubly Linear Linked List using Generic Approch
+// Final code of Doubly Linear Linked List using Generic Approach
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma pack(1)
