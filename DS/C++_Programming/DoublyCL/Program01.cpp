@@ -18,7 +18,7 @@ class DoublyCL
         PNODE last;
         int iCount;
 
-        DoublyLL()
+        DoublyCL()
         {
             first = NULL;
             last = NULL;
