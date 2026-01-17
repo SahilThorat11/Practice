@@ -56,7 +56,6 @@ class DoublyCL
         void InsertLast(int no)
         {
             PNODE newn = NULL;
-            PNODE temp = NULL;
 
             newn = new NODE;
 
@@ -71,15 +70,8 @@ class DoublyCL
             }
             else                                    // LL contains more than one node
             {
-               temp = first;
-
-               while(temp -> next != first)
-               {
-                temp = temp -> next;
-               }
-
-               temp -> next = newn;
-               newn -> prev = temp;
+               last -> next = newn;
+               newn -> prev = last;
                last = newn;
             }
 
@@ -111,11 +103,11 @@ class DoublyCL
             }
             else
             {
-                newn = new node;
+                newn = new NODE;
 
-                newn -> data = no;
-                newn -> next = NULL;
-                newn -> next = NULL;
+                newn->data = no;
+                newn->next = NULL;
+                newn->prev = NULL;
 
                 temp = first;
 
