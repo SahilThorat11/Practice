@@ -82,7 +82,7 @@ class SinglyLL
     }
 }
 
-class Program02
+class Program03
 {
     public static void main(String A[])
     {
