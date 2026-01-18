@@ -5,7 +5,7 @@ class SinglyLLNode
 
     public SinglyLLNode(int no)
     {
-        data = no;
+        this.data = no;
         next = null;
     }
 }
@@ -18,7 +18,7 @@ class SinglyLL
     public SinglyLL()
     {
         System.out.println("Object is created successfully");
-        first = null;
+        this.first = null;
         iCount = 0;
     }
 
@@ -28,10 +28,10 @@ class SinglyLL
 
         newn = new SinglyLLNode(no);
 
-        newn.next = first;
-        first = newn;
+        newn.next = this.first;
+        this.first = newn;
 
-        iCount++;
+        this.iCount++;
     }
 
     public void InsertLast(int no)
@@ -41,13 +41,13 @@ class SinglyLL
 
         newn = new SinglyLLNode(no);
 
-        if(first == null)
+        if(this.first == null)
         {
-            first = newn;
+            this.first = newn;
         }
         else
         {
-            temp = first;
+            temp = this.first;
 
             while(temp.next != null)
             {
@@ -57,7 +57,7 @@ class SinglyLL
             temp.next = newn;
         }
 
-        iCount++;
+        this.iCount++;
     }
 
     public void InsertAtPos(int no, int Pos)
@@ -66,7 +66,7 @@ class SinglyLL
         SinglyLLNode temp = null;
         int iCnt = 0;
 
-        if((Pos < 1) || (Pos > iCount + 1))
+        if((Pos < 1) || (Pos > this.iCount + 1))
         {
             System.out.println("Invalid position");
             return;
@@ -74,17 +74,17 @@ class SinglyLL
 
         if(Pos == 1)
         {
-            InsertFirst(no);
+            this.InsertFirst(no);
         }
         else if(Pos == iCount + 1)
         {
-            InsertLast(no);
+            this.InsertLast(no);
         }
         else
         {
             newn = new SinglyLLNode(no);
             
-            temp = first;
+            temp = this.first;
 
             for(iCnt = 1; iCnt < Pos - 1; iCnt++)
             {
@@ -94,44 +94,44 @@ class SinglyLL
             newn.next = temp.next;
             temp.next = newn;
 
-            iCount++;
+            this.iCount++;
         }
     }
 
     public void DeleteFirst()
     {
-        if(first == null)
+        if(this.first == null)
         {
             return;
         }
-        else if(first.next == null)
+        else if(this.first.next == null)
         {
-            first = null;
+            this.first = null;
         }
         else
         {
-            first = first.next;
+            this.first = this.first.next;
         }
 
         System.gc();
-        iCount--;
+        this.iCount--;
     }
 
     public void DeleteLast()
     {
         SinglyLLNode temp = null;
 
-        if(first == null)
+        if(this.first == null)
         {
             return;
         }
-        else if(first.next == null)
+        else if(this.first.next == null)
         {
-            first = null;
+            this.first = null;
         }
         else
         {
-            temp = first;
+            temp = this.first;
 
             while(temp.next.next != null)
             {
@@ -142,7 +142,7 @@ class SinglyLL
         }
 
         System.gc();
-        iCount--;
+        this.iCount--;
     }
 
     public void DeleteAtPos(int Pos)
@@ -150,7 +150,7 @@ class SinglyLL
         SinglyLLNode temp = null;
         int iCnt = 0;
 
-        if((Pos < 1) || (Pos > iCount))
+        if((Pos < 1) || (Pos > this.iCount))
         {
             System.out.println("Invalid position");
             return;
@@ -158,15 +158,15 @@ class SinglyLL
 
         if(Pos == 1)
         {
-            DeleteFirst();
+            this.DeleteFirst();
         }
         else if(Pos == iCount)
         {
-            DeleteLast();
+            this.DeleteLast();
         }
         else
         {
-            temp = first;
+            temp = this.first;
 
             for(iCnt = 1; iCnt < Pos - 1; iCnt++)
             {
@@ -177,7 +177,7 @@ class SinglyLL
 
             System.gc();
 
-            iCount--;
+            this.iCount--;
         }
     }
 
@@ -185,7 +185,7 @@ class SinglyLL
     {
         SinglyLLNode temp = null;
 
-        temp = first;
+        temp = this.first;
 
         System.out.println();
 
@@ -200,7 +200,7 @@ class SinglyLL
 
     public int Count()
     {
-        return iCount;
+        return this.iCount;
     }
 }
 
