@@ -250,5 +250,8 @@ class Program08
         sobj.Display();
         iRet = sobj.Count();
         System.out.println("Number of nodes are : " + iRet);
+
+        obj = null;
+        System.gc();
     }
 }
