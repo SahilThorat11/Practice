@@ -222,7 +222,7 @@ class DoublyCLL
     }
 }
 
-class DoublyCL
+class Program08
 {
     public static void main(String A[])
     {
