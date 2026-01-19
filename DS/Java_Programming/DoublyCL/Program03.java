@@ -103,16 +103,12 @@ class DoublyCLL
     }
 }
 
-class DoublyCL
+class Program03
 {
     public static void main(String A[])
     {
         DoublyCLL dobj = new DoublyCLL();
         int iRet = 0;
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
 
         dobj.InsertFirst(51);
         dobj.InsertFirst(21);
