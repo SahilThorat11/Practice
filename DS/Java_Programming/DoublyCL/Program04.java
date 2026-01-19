@@ -122,7 +122,7 @@ class DoublyCLL
     }
 }
 
-class DoublyCL
+class Program04
 {
     public static void main(String A[])
     {
@@ -144,5 +144,9 @@ class DoublyCL
         dobj.InsertLast(101);
         dobj.InsertLast(111);
         dobj.InsertLast(121);
+
+        dobj.Display();
+        iRet = dobj.Count();
+        System.out.println("Number of nodes are : " + iRet);
     }
 }
