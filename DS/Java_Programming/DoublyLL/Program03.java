@@ -93,7 +93,7 @@ class DoublyLL
     }
 }
 
-class Program02
+class Program03
 {
     public static void main(String A[])
     {
@@ -103,14 +103,6 @@ class Program02
         dobj.InsertFirst(51);
         dobj.InsertFirst(21);
         dobj.InsertFirst(11);
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-
-        dobj.InsertLast(101);
-        dobj.InsertLast(111);
-        dobj.InsertLast(121);
 
         dobj.Display();
         iRet = dobj.Count();
