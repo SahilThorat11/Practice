@@ -5,8 +5,8 @@ class SinglyCLLNode
 
     public SinglyCLLNode(int no)
     {
-        data = no;
-        next = null;
+        this.data = no;
+        this.next = null;
     }
 }
 
@@ -18,9 +18,9 @@ class SinglyCLL
 
     public SinglyCLL()
     {
-        first = null;
-        last = null;
-        iCount = 0;
+        this.first = null;
+        this.last = null;
+        this.iCount = 0;
     }
 
     public void InsertFirst(int no)
@@ -29,20 +29,20 @@ class SinglyCLL
 
         newn = new SinglyCLLNode(no);
 
-        if((first == null) && (last == null))
+        if((this.first == null) && (this.last == null))
         {
-            first = newn;
-            last = newn;
+            this.first = newn;
+            this.last = newn;
         }
         else
         {
-            newn.next = first;
-            first = newn;
+            newn.next = this.first;
+            this.first = newn;
         }
 
-        last.next = first;
+        this.last.next = this.first;
 
-        iCount++;
+        this.iCount++;
     }
 
     public void InsertLast(int no)
@@ -51,20 +51,20 @@ class SinglyCLL
 
         newn = new SinglyCLLNode(no);
 
-        if((first == null) && (last == null))
+        if((this.first == null) && (this.last == null))
         {
-            first = newn;
-            last = newn;
+            this.first = newn;
+            this.last = newn;
         }
         else
         {
-            last.next = newn;
-            last = newn;
+            this.last.next = newn;
+            this.last = newn;
         }
 
-        last.next = first;
+        this.last.next = this.first;
 
-        iCount++;
+        this.iCount++;
     }
 
     public void InsertAtPos(int no, int Pos)
@@ -73,7 +73,7 @@ class SinglyCLL
         SinglyCLLNode temp = null;
         int iCnt = 0;
 
-        if((Pos < 1) || (Pos > iCount + 1))
+        if((Pos < 1) || (Pos > this.iCount + 1))
         {
             System.out.println("Invalid position");
             return;
@@ -81,17 +81,17 @@ class SinglyCLL
 
         if(Pos == 1)
         {
-            InsertFirst(no);
+            this.InsertFirst(no);
         }
-        else if(Pos == iCount + 1)
+        else if(Pos == this.iCount + 1)
         {
-            InsertLast(no);
+            this.InsertLast(no);
         }
         else
         {
             newn = new SinglyCLLNode(no);
 
-            temp = first;
+            temp = this.first;
 
             for(iCnt = 1; iCnt < Pos - 1; iCnt++)
             {
@@ -101,63 +101,63 @@ class SinglyCLL
             newn.next = temp.next;
             temp.next = newn;
 
-            iCount++;
+            this.iCount++;
         }
     }
 
     public void DeleteFirst()
     {
-        if((first == null) && (last == null))
+        if((this.first == null) && (this.last == null))
         {
             return;
         }
-        else if(first == last)
+        else if(this.first == this.last)
         {
-            first = null;
-            last = null;
+            this.first = null;
+            this.last = null;
         }
         else
         {
-            first = first.next;
+            this.first = this.first.next;
         }
 
-        last.next = first;
+        this.last.next = this.first;
 
         System.gc();
 
-        iCount--;
+        this.iCount--;
     }
 
     public void DeleteLast()
     {
         SinglyCLLNode temp = null;
 
-        if((first == null) && (last == null))
+        if((this.first == null) && (this.last == null))
         {
             return;
         }
-        else if(first == last)
+        else if(this.first == this.last)
         {
-            first = null;
-            last = null;
+            this.first = null;
+            this.last = null;
         }
         else
         {
-            temp = first;
+            temp = this.first;
 
-            while(temp.next.next != first)
+            while(temp.next.next != this.first)
             {
                 temp = temp.next;
             }
 
-            last = temp;
+            this.last = temp;
         }
 
-        last.next = first;
+        this.last.next = this.first;
 
         System.gc();
 
-        iCount--;
+        this.iCount--;
     }
 
     public void DeleteAtPos(int Pos)
@@ -165,7 +165,7 @@ class SinglyCLL
         SinglyCLLNode temp = null;
         int iCnt = 0;
 
-        if( (Pos < 1) || (Pos > iCount) )
+        if( (Pos < 1) || (Pos > this.iCount) )
         {
             System.out.println("Invalid Position");
             return;
@@ -173,15 +173,15 @@ class SinglyCLL
 
         if(Pos == 1)
         {
-            DeleteFirst();
+            this.DeleteFirst();
         }
-        else if(Pos == iCount)
+        else if(Pos == this.iCount)
         {
-            DeleteLast();
+            this.DeleteLast();
         }
         else
         {
-            temp = first;
+            temp = this.first;
 
             for(iCnt = 1; iCnt < Pos - 1; iCnt++)
             {
@@ -192,7 +192,7 @@ class SinglyCLL
 
             System.gc();
 
-            iCount--;
+            this.iCount--;
         }
     }
 
@@ -200,7 +200,7 @@ class SinglyCLL
     {
         SinglyCLLNode temp = null;
 
-        temp = first;
+        temp = this.first;
 
         System.out.print("\n-> ");
 
@@ -208,14 +208,14 @@ class SinglyCLL
         {
             System.out.print("| " + temp.data + " | -> ");
             temp = temp.next;
-        }while(temp != first);
+        }while(temp != this.first);
 
         System.out.println();
     }
 
     public int Count()
     {
-        return iCount;
+        return this.iCount;
     }
 
 }
