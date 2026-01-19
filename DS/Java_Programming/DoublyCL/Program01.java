@@ -72,50 +72,5 @@ class DoublyCL
     {
         DoublyCLL dobj = new DoublyCLL();
         int iRet = 0;
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-
-        dobj.InsertFirst(51);
-        dobj.InsertFirst(21);
-        dobj.InsertFirst(11);
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-
-        dobj.InsertLast(101);
-        dobj.InsertLast(111);
-        dobj.InsertLast(121);
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-
-        dobj.InsertAtPos(105, 5);
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-
-        dobj.DeleteAtPos(5);
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-
-        dobj.DeleteFirst();
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-
-        dobj.DeleteLast();
-
-        dobj.Display();
-        iRet = dobj.Count();
-        System.out.println("Number of nodes are : " + iRet);
-        
     }
 }
