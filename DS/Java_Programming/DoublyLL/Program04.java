@@ -115,7 +115,7 @@ class DoublyLL
     }
 }
 
-class Program02
+class Program04
 {
     public static void main(String A[])
     {
