@@ -85,7 +85,7 @@ class DoublyCLL
     }
 }
 
-class DoublyCL
+class Program02
 {
     public static void main(String A[])
     {
