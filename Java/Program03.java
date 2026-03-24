@@ -12,9 +12,16 @@ class Solution
     {
         int i = 0;
 
-        for(i = 1; i <= iNo/2; i++)
+        for(i = 1; i <= iNo; i++)
         {
-            System.out.print(i + "\t*\t");
+            if(i % 2 == 0)
+            {
+                System.out.print("*\t");
+            }
+            else
+            {
+                System.out.print(i + "\t");
+            }
         }
     }
 }
